@@ -5,20 +5,32 @@ def printEng( num, unit = ' ' ):
 	units_pre = [[' ', 'k', 'M', 'G', 'T', 'P', 'E']\
 	,[' ', 'm', 'μ', 'n', 'p', 'f', 'a']]
 	
+
+
 	x = abs(num)
 	exp = 0
 	neg = 0
+
 	if (num < 0):
 		neg = 1
+
+	if num == 0:
+		mag = 0
+	else:
+
+		mag = m.log(x, 10)
+	
 	small = 0
-	if (abs(num) < 1):
-		small = 1
-	mag = m.log(x, 10)
 	if (x > 1):
 		exp = m.floor(mag)
-	if (x < 1):
+	elif (x < 1):
 		exp = m.floor(mag)
+		small = 1
+	
+
 	power = (m.floor(exp/3))*3
+	
+
 	unit_pre = ' '
 	if (abs(exp) < 21):
 		unit_pre = units_pre[small][abs(m.floor((exp)/3))]

@@ -7,7 +7,6 @@ import math  as m
 
 round_digits = 14
 
-def 
 
 def zl2gamma(ZL, Z0=50):
 	num = (ZL - Z0)/(ZL + Z0)
